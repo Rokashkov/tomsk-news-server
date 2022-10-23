@@ -8,11 +8,11 @@ datasource db {
 }
 
 model Article {
-	id        		Int     @id @default(autoincrement())
+	id        		Int     		@id @default(autoincrement())
 	title     		String			@default("default title")
 	description		String			@default("default description")
 	keywords		String[]		@default(["default keywords"])
-	content   		String[]		@default(["default content"])
+	content   		Json[]			@default(["{\"tag\": \"h1\", \"text\": \"Header\"}"])
 	createdAt		DateTime		@default(now())
 	updatedAt		DateTime		@updatedAt
 }

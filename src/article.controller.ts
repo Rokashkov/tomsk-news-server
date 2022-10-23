@@ -14,8 +14,7 @@ export class ArticleController {
 
 	@Post('/create')
 	async createArticle(@Req() req: Request) {
-		const { title, content } = req.body
-		const article = await this.articleService.createArticle(title, content)
+		const article = await this.articleService.createArticle(req.body)
 		return article
 	}
 
