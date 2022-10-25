@@ -13,7 +13,7 @@ const start = async () => {
 		const PORT = process.env.PORT
 		const  createApp = async () => {
 			if (process.env.NODE_ENV === 'production') {
-				const __certs = resolve(__dirname, '..', '..', '..', 'etc', 'letsencrypt', 'live', 'tomsk-news.ru')
+				const __certs = resolve(__dirname, '..', '..', '..', '..', 'etc', 'letsencrypt', 'live', 'tomsk-news.ru')
 				const httpsOptions = {
 					key: readFileSync(resolve(__certs, 'privkey.pem')),
 					cert: readFileSync(resolve(__certs, 'privkey.pem'))
