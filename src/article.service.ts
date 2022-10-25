@@ -35,6 +35,7 @@ export class ArticleService {
 				content
 			}
 		})
+		article.content
 		return article
 	}
 
