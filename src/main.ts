@@ -16,7 +16,7 @@ const start = async () => {
 				const __certs = resolve(__dirname, '..', '..', '..', '..', 'etc', 'letsencrypt', 'live', 'tomsk-news.ru')
 				const httpsOptions = {
 					key: readFileSync(resolve(__certs, 'privkey.pem')),
-					cert: readFileSync(resolve(__certs, 'privkey.pem'))
+					cert: readFileSync(resolve(__certs, 'fullchain.pem'))
 				}
 				const app = await NestFactory.create(
 					ArticleModule,
