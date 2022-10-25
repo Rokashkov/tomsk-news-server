@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Req } from '@nestjs/common'
+import { Controller, Get, Post, Req, Res } from '@nestjs/common'
 import { Request } from 'express'
 import { ArticleService } from './article.service'
 
@@ -15,6 +15,12 @@ export class ArticleController {
 	@Post('/create')
 	async createArticle(@Req() req: Request) {
 		const article = await this.articleService.createArticle(req.body)
+		return article
+	}
+
+	@Post('/edit')
+	async editArticle(@Req() req: Request) {
+		const article = await this.articleService.editArticle(req.body)
 		return article
 	}
 
